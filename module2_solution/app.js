@@ -30,10 +30,10 @@
         
         var boughtItems = [];
         service.transferItem = function (itemName, quantity, itemIndex) {
-            var item = {
+            var item = [{
                 name: itemName,
                 quantity: quantity,
-            };
+            }];
             boughtItems.push(item);
             toBuyItems.splice(itemIndex, 1);
         };
