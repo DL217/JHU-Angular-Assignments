@@ -5,14 +5,15 @@
     .controller('AlreadyBoughtController', AlreadyBoughtController)
     .service('ShoppingListCheckOffService', ShoppingListCheckOffService)
     
-    ToBuyController.$inject = ['ShoppingListCheckOffService'];
-    function ToBuyController(ShoppingListCheckOffService) {
-        var buy = this;
-        var items = [{name:"cookies", quantity:10},
+    var items = [{name:"cookies", quantity:10},
                      {name:"chips", quantity:5},
                      {name:"drinks", quantity:3},
                      {name:"apples", quantity:7},
                      {name:"oranges", quantity:2}];
+    
+    ToBuyController.$inject = ['ShoppingListCheckOffService'];
+    function ToBuyController(ShoppingListCheckOffService) {
+        var buy = this;
         try {
             buy.transferItem = function () {
                 ShoppingListCheckOffService.transferItem(buy.itemName, buy.quantity);
