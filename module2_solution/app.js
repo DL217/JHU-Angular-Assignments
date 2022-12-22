@@ -48,8 +48,11 @@
         service.removeItem = function(itemIndex) {
             toBuyItems.splice(itemIndex, 1);
         };
-        service.getItems = function (){
+        service.getToBuyItems = function () {
             return toBuyItems;
         };
+        service.getBoughtItems = function () {
+            return boughtItems;
+        }
     }
 })();
