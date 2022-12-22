@@ -34,7 +34,7 @@
     <div class="col-md-6" ng-controller='ToBuyController as buy'>
      <h2>To Buy:</h2>
      <ul>
-       <li ng-repeat="item in toBuyItems">Buy {{item.quantity}} {{item.name}} <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
+       <li ng-repeat="item in items">Buy {{item.quantity}} {{item.name}} <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
      </ul>
      <div ng-if="buy.errorMessage" class="emptyMessage">Everything is bought!</div>
     </div>
