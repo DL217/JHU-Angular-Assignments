@@ -30,7 +30,7 @@
         
     }
     
-    function ShoppingListCheckOffService($scope) {
+    function ShoppingListCheckOffService() {
         var service = this;
         var toBuyItems = [{name:"cookies", quantity:10},
                      {name:"chips", quantity:5},
