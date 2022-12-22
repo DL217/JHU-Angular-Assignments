@@ -3,7 +3,7 @@
     angular.module('ShoppingListCheckOff', [])
     .controller('ToBuyController', ToBuyController)
     .controller('AlreadyBoughtController', AlreadyBoughtController)
-    .service('ShoppingListCheckOffService', ShoppingListCheckOffService)
+    .service('ShoppingListCheckOffService', ShoppingListCheckOffService);
     
     var items = [{name:"cookies", quantity:10},
                  {name:"chips", quantity:5},
