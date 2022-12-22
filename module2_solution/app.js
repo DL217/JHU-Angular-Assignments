@@ -12,7 +12,7 @@
         buy.itemQuantity = "";
         buy.items = ShoppingListCheckOffService.getToBuyItems();
         buy.buyItem = function () {
-            ShoppingListCheckOffService.transferItem(buy.itemName, buy.quantity, buy.itemIndex);
+            ShoppingListCheckOffService.transferItem(buy.itemName, buy.itemQuantity, buy.itemIndex);
         };
     }
     
