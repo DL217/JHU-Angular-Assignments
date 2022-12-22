@@ -57,6 +57,6 @@
         };
         service.getBoughtItems = function () {
             return boughtItems;
-        }
+        };
     }
 })();
