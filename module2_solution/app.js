@@ -23,15 +23,18 @@
                      {name:"apples", quantity:7},
                      {name:"oranges", quantity:2}];
         var boughtItems = [];
-        service.addItem = function (itemName, quantity) {
+        service.transferItem = function (itemName, quantity) {
             var item = {
                 name: itemName,
                 quantity: quantity,
             };
             boughtItems.push(item);
-        }
+        };
+        service.removeItem = function(itemIndex) {
+            toBuyItems.splice(itemIndex, 1);
+        };
         service.getItems = function (){
             return toBuyItems;
-        }
+        };
     }
 })();
