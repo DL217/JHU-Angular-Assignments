@@ -9,16 +9,14 @@
     function ToBuyController(ShoppingListCheckOffService) {
         var buy = this;
         buy.items = ShoppingListCheckOffService.getToBuyItems();
-        try {
-            buy.transferItem = function () {
+        buy.buyItem = function () {
+            try {
                 ShoppingListCheckOffService.transferItem(buy.itemName, buy.quantity);
-            }
-            buy.removeItem = function(itemIndex) {
                 ShoppingListCheckOffService.removeItem(buy.itemName, buy.quantity);
+            } catch (error) {
+                buy.errorMessage = error.message;
             }
-        } catch (error) {
-            buy.errorMessage = error.message;
-        }
+        };
     }
     
     AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
