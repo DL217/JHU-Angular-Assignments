@@ -36,7 +36,7 @@
     
     function ShoppingListCheckOffService() {
         var service = this;
-        var toBuyItems = [];
+        var toBuyItems = items;
         var boughtItems = [];
         service.transferItem = function (itemName, quantity) {
             var item = {
