@@ -37,8 +37,8 @@
             var item = {name: itemName,
                         quantity: itemQuantity,
                         index: itemIndex};
-            boughtItems.push(item);
             toBuyItems.splice(itemIndex, 1);
+            boughtItems.push(item);
         };
         service.getToBuyItems = function () {
             return toBuyItems;
