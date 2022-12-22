@@ -10,11 +10,7 @@
         var buy = this;
         buy.items = ShoppingListCheckOffService.getToBuyItems();
         buy.buyItem = function () {
-            try {
-                ShoppingListCheckOffService.transferItem(buy.itemName, buy.quantity, buy.itemIndex);
-            } catch (error) {
-                buy.errorMessage = error.message;
-            }
+            ShoppingListCheckOffService.transferItem(buy.itemName, buy.quantity, buy.itemIndex);
         };
     }
     
