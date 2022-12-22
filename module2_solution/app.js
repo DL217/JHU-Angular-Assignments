@@ -10,11 +10,15 @@
         var buy = this;
         buy.itemName = "";
         buy.quantity = "";
-        buy.transferItem = function () {
-            ShoppingListCheckOffService.transferItem(buy.itemName, buy.quantity);
-        }
-        buy.removeItem = function(itemIndex) {
-            ShoppingListCheckOffService.removeItem(buy.itemName, buy.quantity);
+        try {
+            buy.transferItem = function () {
+                ShoppingListCheckOffService.transferItem(buy.itemName, buy.quantity);
+            }
+            buy.removeItem = function(itemIndex) {
+                ShoppingListCheckOffService.removeItem(buy.itemName, buy.quantity);
+            }
+        } catch (error) {
+            buy.errorMessage = error.message;
         }
     }
     
