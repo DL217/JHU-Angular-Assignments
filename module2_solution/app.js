@@ -6,10 +6,10 @@
     .service('ShoppingListCheckOffService', ShoppingListCheckOffService)
     
     var items = [{name:"cookies", quantity:10},
-                     {name:"chips", quantity:5},
-                     {name:"drinks", quantity:3},
-                     {name:"apples", quantity:7},
-                     {name:"oranges", quantity:2}];
+                 {name:"chips", quantity:5},
+                 {name:"drinks", quantity:3},
+                 {name:"apples", quantity:7},
+                 {name:"oranges", quantity:2}];
     
     ToBuyController.$inject = ['ShoppingListCheckOffService'];
     function ToBuyController(ShoppingListCheckOffService) {
