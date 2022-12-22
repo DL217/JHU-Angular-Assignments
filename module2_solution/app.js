@@ -14,6 +14,7 @@
     ToBuyController.$inject = ['ShoppingListCheckOffService'];
     function ToBuyController(ShoppingListCheckOffService) {
         var buy = this;
+        buy.items = ShoppingListCheckOffService.getToBuyItems();
         try {
             buy.transferItem = function () {
                 ShoppingListCheckOffService.transferItem(buy.itemName, buy.quantity);
@@ -29,9 +30,7 @@
     AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
     function AlreadyBoughtController(ShoppingListCheckOffService) {
         var bought = this;
-        bought.itemName = "";
-        bought.quantity = "";
-        
+        bought.items = ShoppingListCheckOffService.getBoughtItems();
     }
     
     function ShoppingListCheckOffService() {
