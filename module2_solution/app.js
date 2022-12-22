@@ -8,11 +8,12 @@
     ToBuyController.$inject = ['ShoppingListCheckOffService'];
     function ToBuyController(ShoppingListCheckOffService) {
         var buy = this;
-        buy.itemName = "";
-        buy.itemQuantity = "";
         buy.items = ShoppingListCheckOffService.getToBuyItems();
-        buy.buyItem = function (itemIndex) {
-            ShoppingListCheckOffService.transferItem(buy.itemName, buy.itemQuantity, buy.itemIndex);
+        buy.buyItem = function () {
+            ShoppingListCheckOffService.transferItem(buy.itemName, buy.itemQuantity);
+        };
+        buy.removeItem = function(itemIndex) {
+            ShoppingListCheckOffService.deleteItem(itemIndex);
         };
     }
     
@@ -33,12 +34,13 @@
                           {name:"oranges", quantity:2}];
         
         var boughtItems = [];
-        service.transferItem = function (itemName, itemQuantity, itemIndex) {
+        service.transferItem = function (itemName, itemQuantity) {
             var item = {name: itemName,
-                        quantity: itemQuantity,
-                        index: itemIndex};
-            toBuyItems.splice(itemIndex, 1);
+                        quantity: itemQuantity};
             boughtItems.push(item);
+        };
+        service.deleteItem = function (itemIndex) {
+            toBuyItems.splice(itemIndex, 1);
         };
         service.getToBuyItems = function () {
             return toBuyItems;
