@@ -11,8 +11,7 @@
         buy.items = ShoppingListCheckOffService.getToBuyItems();
         buy.buyItem = function () {
             try {
-                ShoppingListCheckOffService.transferItem(buy.itemName, buy.quantity);
-                ShoppingListCheckOffService.removeItem(buy.itemName, buy.quantity);
+                ShoppingListCheckOffService.transferItem(buy.itemName, buy.quantity, buy.itemIndex);
             } catch (error) {
                 buy.errorMessage = error.message;
             }
@@ -34,14 +33,12 @@
                           {name:"oranges", quantity:2}];
         
         var boughtItems = [];
-        service.transferItem = function (itemName, quantity) {
+        service.transferItem = function (itemName, quantity, itemIndex) {
             var item = {
                 name: itemName,
                 quantity: quantity,
             };
             boughtItems.push(item);
-        };
-        service.removeItem = function(itemIndex) {
             toBuyItems.splice(itemIndex, 1);
         };
         service.getToBuyItems = function () {
