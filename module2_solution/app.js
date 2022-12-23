@@ -8,11 +8,9 @@
     ToBuyController.$inject = ['ShoppingListCheckOffService'];
     function ToBuyController(ShoppingListCheckOffService) {
         var buy = this;
-        buy.itemName = "";
-        buy.itemQuantity = "";
         buy.items = ShoppingListCheckOffService.getToBuyItems();
         buy.buyItem = function (itemName, itemQuantity) {
-            ShoppingListCheckOffService.transferItem(buy.itemName, buy.itemQuantity);
+            ShoppingListCheckOffService.transferItem(itemName, itemQuantity);
         };
         buy.removeItem = function(itemIndex) {
             ShoppingListCheckOffService.deleteItem(itemIndex);
@@ -22,8 +20,6 @@
     AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
     function AlreadyBoughtController(ShoppingListCheckOffService) {
         var bought = this;
-        bought.itemName = "";
-        bought.itemQuantity = "";
         bought.items = ShoppingListCheckOffService.getBoughtItems();
     }
     
